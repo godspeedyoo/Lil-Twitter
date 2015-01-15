@@ -18,3 +18,9 @@ post '/tweets/:id/retweet' do
 
 end
 # user = User.find(session[:user_id])
+
+delete '/tweets/:id' do
+  tweet = Tweet.find(params[:id])
+  tweet.destroy
+  redirect '/tweets'
+end
