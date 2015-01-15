@@ -3,8 +3,12 @@ get '/tweets' do
   erb :'tweets/index'
 end
 
+get '/tweets/new' do
+  erb :'tweets/new'
+end
+
 post '/tweets' do
-  p params
-  @user = User.create(username: "One")
-  @tweet = @user.tweets.create(params)
+  user = User.first
+  tweet = user.tweets.create(params[:tweet])
+  redirect '/tweets'
 end
