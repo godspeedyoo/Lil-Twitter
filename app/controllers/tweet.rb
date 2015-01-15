@@ -10,6 +10,7 @@ end
 post '/tweets' do
   user = User.first
   tweet = user.tweets.create(params[:tweet])
+  # display errors conditionally
   redirect '/tweets'
 end
 
