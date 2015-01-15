@@ -8,4 +8,14 @@ describe "Tweet shit" do
     end
   end
 
+  describe "post /tweets" do
+    it "creates a new tweet" do
+      expect {
+        post '/tweets', {content: "extra shit"}
+      }.to change {
+        Tweet.count
+      }.by(1)
+    end
+  end
+
 end

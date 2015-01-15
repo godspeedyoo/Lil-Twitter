@@ -1,5 +1,4 @@
-puts "LOADING ROUTES"
-
 get '/tweets' do
-  "HELLO WORLD"
+  @tweets = Tweet.all
+  erb :'tweets/index'
 end
