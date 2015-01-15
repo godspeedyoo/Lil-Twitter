@@ -1,3 +1,23 @@
 class User < ActiveRecord::Base
   # Remember to create a migration!
+
+  include BCrypt
+
+  def password
+    @password ||= Password.new(password_hash)
+  end
+
+  def password=(pass)
+    @password ||= Password.create(pass)
+    self.password_hash = @password
+  end
+
+  def self.create(params)
+    user = User.new(
+      :username => params[:username],
+      :email => params[:email] )
+    user.password = params[:password]
+    user.save
+    user
+  end
 end
