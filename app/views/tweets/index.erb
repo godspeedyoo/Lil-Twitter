@@ -1,7 +1,7 @@
 <div>
 <ul>
 <% @tweets.each do |tweet| %>
-  <li><%= tweet.content %></li>
+  <li><%= tweet.content %><form method="post" action="/tweets/<%= tweet.id %>/retweet"><input type="submit" value="retweet"></form></li>
 <% end %>
 </ul>
 </div>

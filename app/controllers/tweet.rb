@@ -12,3 +12,5 @@ post '/tweets' do
   tweet = user.tweets.create(params[:tweet])
   redirect '/tweets'
 end
+
+# user = User.find(session[:user_id])
