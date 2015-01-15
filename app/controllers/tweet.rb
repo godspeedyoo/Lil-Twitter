@@ -13,4 +13,7 @@ post '/tweets' do
   redirect '/tweets'
 end
 
+post '/tweets/:id/retweet' do
+
+end
 # user = User.find(session[:user_id])

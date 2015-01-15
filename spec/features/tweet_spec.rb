@@ -18,4 +18,8 @@ describe "Tweet shit" do
     end
   end
 
+  pending "post /tweets/:id/retweet" do
+    it "" do
+    end
+  end
 end
