@@ -32,7 +32,6 @@ post '/signup' do
   if @user.save
     redirect '/profile'
   else
-    #redisplay the form!!!
     erb :"/signup/sign_up_forms"
   end
 end
@@ -44,11 +43,9 @@ get '/signout' do
 end
 
 get '/profile' do
-  #if a user is logged in
   if session[:id] != nil
     @user = User.find(session[:id])
-    # check the session to see if there is an id there
-  #render something
+
     erb :'/profile/index'
   else
     redirect '/login'

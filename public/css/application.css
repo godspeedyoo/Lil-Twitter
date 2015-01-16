@@ -1,6 +1,35 @@
+body {
+  background-color: #ecf0f1;
+}
+
+.nav {
+  background-color: #7f8c8d;
+  text-align: center;
+}
+
+.nav ul li {
+  list-style: none;
+  display: inline;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
 .container {
   background-color: #f0f0f0;
-  margin-top: 20px
+  margin-top: 20px;
+  padding: 5px 5px 5px 20px;
 }
 
 .text {
@@ -24,4 +53,9 @@
 
 .tweet-author {
   color: #a6a6a6;
+}
+
+.error_messages {
+  color: red;
+  font-size: small;
 }
