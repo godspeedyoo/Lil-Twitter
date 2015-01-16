@@ -2,9 +2,9 @@
   <div class="panel-body">
       <div class="col-md-2"></div>
       <div class="col-md-10">
-      <% @user.errors.full_messages.each do |message| %>
-      <p><%= message %></p>
-      <% end %>
+          <% @user.errors.full_messages.each do |message| %>
+          <p><span class='error-messages'><%= message %></span></p>
+          <% end %>
 
       <h3>Join Lil-Twitter Today.</h3><br>
 

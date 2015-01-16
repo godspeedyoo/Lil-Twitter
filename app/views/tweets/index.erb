@@ -13,25 +13,51 @@
     <div class="col-md-6">
       <div class="panel panel-info">
         <div class="panel-heading">
-          Picture + Input box for tweets
+
+      <form action="/tweets" method="post">
+
+
+      <input class="input-lg" type="text" name="tweet[content]" placeholder="Tweet Content">
+      <input class="btn btn-info btn"  type="submit" value="Tweet!!">
+    </form>
+
         </div>
 
-        <% @tweets.each do |tweet| %>
         <div class="panel-body">
-          <%= tweet.user.username %>
-          <%= tweet.content %>
+        <% @tweets.each do |tweet| %>
+          <div class="well-sm">
+            <div class="tweet-header">
 
-          <form class="tweet-button" method="post" action="/tweets/<%= tweet.id %>/retweet">
-            <input class="btn btn-info" type="submit" value="retweet">
-          </form>
+              <div class="col-md-6">
+              <em>@<%= tweet.user.username %></em>
+              </div>
 
-          <form class="tweet-button" method="post" action='/tweets/<%= tweet.id  %>'>
-            <input type="hidden" name="_method" value="delete">
-            <input class="btn btn-danger" type="submit" value="delete">
-          </form>
+              <div class="col-md-3"></div>
+
+              <div class="col-md-3">
+                <%= tweet.created_at.to_s.chars[0..10].join %>
+              </div>
+            </div>
+
+
+            <div class="tweet-body">
+             <%= tweet.content %>
+            </div>
+
+
+            <div class="container">
+              <form class="tweet-button" method="post" action="/tweets/<%= tweet.id %>/retweet">
+                <input class="btn btn-info btn-xs" type="submit" value="retweet">
+              </form>
+
+              <form class="tweet-button" method="post" action='/tweets/<%= tweet.id  %>'>
+                <input type="hidden" name="_method" value="delete">
+                <input class="btn btn-danger btn-xs" type="submit" value="delete">
+              </form>
+            </div>
+          </div>
           <% end %>
         </div>
-
       </div>
     </div>
 
