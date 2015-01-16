@@ -1,17 +1,12 @@
 class User < ActiveRecord::Base
-<<<<<<< HEAD
-  # # Remember to create a migration!
+  include BCrypt
+
+  has_many :tweets
 
   validates :username, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email, presence: true
-=======
-  # Remember to create a migration!
-  has_many :tweets
->>>>>>> 17295e5228ad98e4e2cbfa935f951496c47d130a
-
-  include BCrypt
 
   def password
      @password ||= Password.new(password_hash)
