@@ -1,8 +1,23 @@
-<div class="container">
-  <form action="/login" method="post">
-    Username:<br><input type="text" name="username"><br>
-    Password:<br><input type="password" name="password"><br><br>
-    <input type="submit" value="Log in">
-  </form>
-</div>
 
+<div class="panel panel-default">
+  
+  <div class="panel-body">
+    Log in to Lil-Twitter<br><br>
+
+    <form action="/login" method="post">
+      <input type="text" name="username" autocomplete="off" maxlength="20" value placeholder="Username"><br><br>
+      <input type="password" name="password" autocomplete="off" maxlength="20" value placeholder="Password"><br><br>
+      <input class="btn btn-info" type="submit" value="Log in">
+      <input type="checkbox" value="1" name="remember_me" checked="checked"> Remember me .
+      <a href="#">Forgot password?</a>
+    </form>
+  </div>
+
+  <div class="panel-footer">
+    <ul>
+      <li>Need to Twitter?  <a href="/signup">Sign up now »</a></li>
+      <li>Already using Lil-Twitter via text message? <a href="#">Activate your account »</a></li>
+    </ul>
+  </div>
+
+</div>

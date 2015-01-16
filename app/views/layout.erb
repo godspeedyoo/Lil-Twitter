@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/css/application.css">
-
+  <title>Lil-Twitter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,800italic,400,700,800' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/bootstrap-responsive.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
 </head>
 <body>
-  <%= yield %>
+
+  <!-- NAVIGATION HEADER WITH BIRD BRAND -->
+    <nav class="navbar navbar-default container-fluid">
+      <a class="navbar-brand" href="#">
+        <img class="bird" alt="Brand" src="bird.png">
+      </a>
+    </nav>
+
+      <div>
+        <%= yield %>
+      </div>
+  
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
