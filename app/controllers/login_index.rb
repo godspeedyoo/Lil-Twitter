@@ -37,6 +37,12 @@ post '/signup' do
   end
 end
 
+get '/signout' do
+  session[:id] = nil
+
+  redirect '/'
+end
+
 get '/profile' do
   #if a user is logged in
   if session[:id] != nil
