@@ -1,0 +1,14 @@
+<div class="container">
+  <% @user.errors.full_messages.each do |message| %>
+  <p><%= message %></p>
+  <% end %>
+
+  <form action="/signup" method="post">
+    First Name:<br><input type="text" name="first_name"><br>
+    Last Name:<br><input type="text" name="last_name"><br>
+    Username:<br><input type="text" name="username"><br>
+    Password:<br><input type="text" name="password"><br>
+    Email:<br><input type="text" name="email"><br><br>
+    <input type="submit" value="Sign Up :D">
+  </form>
+</div>
