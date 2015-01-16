@@ -1,22 +1,23 @@
 <div class="panel panel-default">
   <div class="panel-body">
+      <div class="col-md-2"></div>
+      <div class="col-md-10">
+      <% @user.errors.full_messages.each do |message| %>
+      <p><%= message %></p>
+      <% end %>
 
-    <% @user.errors.full_messages.each do |message| %>
-    <p><%= message %></p>
-    <% end %>
+      <h3>Join Lil-Twitter Today.</h3><br>
 
-    <h3>Join Lil-Twitter Today.</h3><br>
+      <form action="/signup" method="post">
+        <b>First Name</b><br><input class="sign-up-input" type="text" name="first_name"><br>
+        <b>Last Name</b><br><input class="sign-up-input" type="text" name="last_name"><br>
+        <b>Email address</b><br><input class="sign-up-input"  type="text" name="email"><br>
+        <b>Create a password</b><br><input class="sign-up-input" type="password" name="password"><br>
+        <b>Choose your username</b><br><input class="sign-up-input" type="text" name="username"><br><br>
 
-    <form action="/signup" method="post">
-      <b>First Name</b><br><input class="sign-up-input" type="text" name="first_name"><br>
-      <b>Last Name</b><br><input class="sign-up-input" type="text" name="last_name"><br>
-      <b>Email address</b><br><input class="sign-up-input"  type="text" name="email"><br>
-      <b>Create a password</b><br><input class="sign-up-input" type="password" name="password"><br>
-      <b>Choose your username</b><br><input class="sign-up-input" type="text" name="username"><br><br>
-
-      <input type="checkbox" value="1" name="tailer-checkbox" checked="checked"> Tailer Twitter based on my recent website visits. <a href="/signup">Learn more.</a><br><br>
-      <input class="btn btn-warning" type="submit" value="Sign Up" style="width: 385px">
-    </form>
-
+        <input type="checkbox" value="1" name="tailer-checkbox" checked="checked"> Tailer Twitter based on my recent website visits. <a href="/signup">Learn more.</a><br><br>
+        <input class="btn btn-warning" type="submit" value="Sign Up" style="width: 385px">
+      </form>
+    </div>
   </div>
 </div>
