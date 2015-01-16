@@ -2,6 +2,8 @@
 
 get '/tweets' do
   @tweets = Tweet.all
+  p "*"*50
+  p @tweets
   erb :'tweets/index'
 end
 

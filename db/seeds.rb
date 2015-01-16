@@ -16,3 +16,4 @@ User.create(
 
 
 
+User.first.tweets.create(content: "Tweeets")

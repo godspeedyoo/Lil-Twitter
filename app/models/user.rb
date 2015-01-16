@@ -8,7 +8,10 @@ class User < ActiveRecord::Base
   has_many :followers, through: :follows
 
   has_many :subscriptions, :foreign_key => :follower_id
-  has_many :followings, through: :subscriptions#, :source => :following
+  has_many :followings, through: :subscriptions
+
+
+
 
   validates :username, presence: true
   validates :first_name, presence: true
