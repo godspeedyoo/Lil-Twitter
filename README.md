@@ -17,16 +17,16 @@ A user has a profile page
 Add your own user stories
 
 # To Do
-A user can only post status updates of 140 characters or less
 A user can retweet others' status updates
 A user sees a styled site
 
 
 
 # Doing
-A user can delete their tweet
 
 
 
 # Done
+A user can only post status updates of 140 characters or less
+A user can delete their tweet
 A user can post tweets

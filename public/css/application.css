@@ -1,5 +1,25 @@
+.text {
+  color: #dcdcdc;
+}
+
 .tweet {
   margin-left: 20%;
   margin-right: 20%;
+  margin-bottom: 10px;
+  padding: 5px;
   border: 1px solid lightblue;
+}
+
+.tweet-button {
+  display: inline-block;
+  color: #7200b1;
+  border: 2px solid black;
+}
+
+.tweet-author {
+  color: #a6a6a6;
+}
+
+.tweet {
+  background-color: #46006d;
 }
