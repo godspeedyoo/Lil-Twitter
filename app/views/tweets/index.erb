@@ -1,12 +1,17 @@
 <div>
 <ul>
 <% @tweets.each do |tweet| %>
-  <div>
-    <h3><%= tweet.user.username %></h3>
-    <p><%= tweet.content %></p>
-    <form method="post" action="/tweets/<%= tweet.id %>/retweet"><input type="submit" value="retweet"></form>
-    <form>
-    </form>
+  <div class="tweet">
+    <h3 class="tweet-author text"><%= tweet.user.username %></h3>
+    <p class="text"><%= tweet.content %></p>
+    <div>
+      <form class="tweet-button" method="post" action="/tweets/<%= tweet.id %>/retweet"><input type="submit" value="retweet">
+      </form>
+      <form class="tweet-button" method="post" action='/tweets/<%= tweet.id  %>'>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="delete">
+      </form>
+    </div>
   </div>
 <% end %>
 </ul>
