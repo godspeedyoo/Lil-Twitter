@@ -1,7 +1,9 @@
 <div class="container">
-  <% @user.errors.full_messages.each do |message| %>
-  <p><%= message %></p>
-  <% end %>
+  <div class="error_messages">
+    <% @user.errors.full_messages.each do |message| %>
+    <p><%= message %></p>
+    <% end %>
+  </div>
 
   <form action="/signup" method="post">
     First Name:<br><input type="text" name="first_name"><br>
