@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3">
- 
+
       <div class="panel panel-default">
         <div class="panel-heading">Cover Picture</div>
         <div class="panel-body">
@@ -15,11 +15,11 @@
         <div class="panel-heading">
           Picture + Input box for tweets
         </div>
-        
+
         <% @tweets.each do |tweet| %>
         <div class="panel-body">
           <%= tweet.user.username %>
-          <%= tweet.content %> 
+          <%= tweet.content %>
 
           <form class="tweet-button" method="post" action="/tweets/<%= tweet.id %>/retweet">
             <input class="btn btn-info" type="submit" value="retweet">
@@ -31,22 +31,38 @@
           </form>
           <% end %>
         </div>
-   
+
       </div>
     </div>
 
     <div class="col-md-3">
 
       <div class="panel panel-default">
-        <div class="panel-body">
-          Who to Follow . refresh . view all
+
+        <div class="panel-header">
+          Currently Following
         </div>
 
-        <div class="panel-footer">Find people you know</div>
+        <% @current_user.followings.each do |following| %>
+            <div class="panel-footer">
+              <a href="/profile/<%= following.id %>"><%= following.username %></a>
+            </div>
+        <% end %>
+
+        <div class="panel-header">
+        Find people you may know
+        </div>
+        <div class="panel-footer">
+        <% @users.each do |user| %>
+          <div class="panel-users">
+            <a href="/profile/<%= user.id %>"><%= user.username  %></a>
+          </div>
+        <% end %>
+        </div>
       </div>
 
     </div>
-  </div>  
+  </div>
 </div>
 
 

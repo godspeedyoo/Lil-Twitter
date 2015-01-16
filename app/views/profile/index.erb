@@ -9,10 +9,16 @@
       <dt>Email</dt>
       <dd><%= @user.email %></dd>
     </dl>
-    
-    <a href="/tweets" class="btn btn-info">Tweets</a>
-    <a href="/signout" class="btn btn-primary">Sign out</a>
-   
+
+    <div class="profile-button">
+      <a href="/tweets" class="btn btn-info">Tweets</a>
+      <a href="/signout" class="btn btn-primary">Sign out</a>
+      <form action="/follow/<%= @user.id  %>" method="post" style="display: inline-block">
+        <input type="hidden" name="_method" value="put">
+        <input class="btn btn-default" type="submit" value="Follow">
+      </form>
+    </div>
+
 
   </div>
 </div>

@@ -17,12 +17,13 @@
       <a class="navbar-brand" href="/">
         <img class="bird" alt="Brand" src="bird.png">
       </a>
+      Currently logged in as <%= User.find(session[:id]).username %>
     </nav>
 
       <div class ="col-md-12 jumbotron">
         <%= yield %>
       </div>
-  
+
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="/js/bootstrap.min.js"></script>

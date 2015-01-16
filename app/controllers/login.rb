@@ -43,12 +43,3 @@ get '/signout' do
   redirect '/'
 end
 
-get '/profile' do
-  if session[:id] != nil
-    @user = User.find(session[:id])
-
-    erb :'/profile/index'
-  else
-    redirect '/login'
-  end
-end
