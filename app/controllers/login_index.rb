@@ -18,7 +18,8 @@ post '/login' do
 end
 
 get '/signup' do
-  erb :sign_up_forms
+  @user = User.new
+  erb :"/signup/sign_up_forms"
 end
 
 post '/signup' do
@@ -32,8 +33,7 @@ post '/signup' do
     redirect '/secrets'
   else
     #redisplay the form!!!
-    # @user.errors.full_message
-     erb :sign_up_forms
+    erb :"/signup/sign_up_forms"
   end
 end
 
