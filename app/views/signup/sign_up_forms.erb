@@ -3,7 +3,7 @@
       <div class="col-md-2"></div>
       <div class="col-md-10">
           <% @user.errors.full_messages.each do |message| %>
-          <p><span class='error-messages'><%= message %></span></p>
+          <span style='color:red; font-size:small'><%= message %></span><br>
           <% end %>
 
       <h3>Join Lil-Twitter Today.</h3><br>
