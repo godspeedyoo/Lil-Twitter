@@ -2,6 +2,13 @@ class User < ActiveRecord::Base
   include BCrypt
 
   has_many :tweets
+  # has_many :subscriptions
+  # looks for all
+  has_many :follows, class_name: 'Subscription', :foreign_key => :following_id
+  has_many :followers, through: :follows
+
+  has_many :subscriptions, :foreign_key => :follower_id
+  has_many :followings, through: :subscriptions#, :source => :following
 
   validates :username, presence: true
   validates :first_name, presence: true

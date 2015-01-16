@@ -22,7 +22,8 @@ post '/tweets' do
 end
 
 post '/tweets/:id/retweet' do
-
+  @tweet = Tweet.find(params[:id])
+  # @tweet.update_attributes(:)
 end
 
 delete '/tweets/:id' do
