@@ -11,7 +11,7 @@ post '/login' do
   @user = User.find_by(username: params[:username])
   if @user != nil && @user.password == params[:password]
     session[:id] = @user.id
-    redirect '/secrets'
+    redirect '/profile'
   else
     redirect '/'
   end
@@ -30,31 +30,20 @@ post '/signup' do
       email: params[:email],
       password: params[:password])
   if @user.save
-    redirect '/secrets'
+    redirect '/profile'
   else
     #redisplay the form!!!
     erb :"/signup/sign_up_forms"
   end
 end
 
-get '/secrets' do
+get '/profile' do
   #if a user is logged in
   if session[:id] != nil
     # check the session to see if there is an id there
   #render something
-  "Success"
+    erb :'/profile/index'
   else
     redirect '/login'
   end
 end
-
-# get '/login' do
-#   # click on something then
-#   "hello world"
-#   # erb ':index/login'
-# end
-
-# post '/login' do
-#   User.create(params)
-
-# end

@@ -11,7 +11,7 @@ get '/tweets/new' do
 end
 
 post '/tweets' do
-  @user = User.first
+  @user = User.find(session[:id])
   @tweet = @user.tweets.new(:content => params[:tweet][:content])
   # display errors conditionally
   if @tweet.save
@@ -24,7 +24,6 @@ end
 post '/tweets/:id/retweet' do
 
 end
-# user = User.find(session[:user_id])
 
 delete '/tweets/:id' do
   tweet = Tweet.find(params[:id])
