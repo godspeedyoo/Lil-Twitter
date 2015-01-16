@@ -20,10 +20,12 @@
           <img class="bird" alt="Brand" src="bird.png">
         </a>
       <% else %>
-      <%= User.find(session[:id]).username %>
         <a class="navbar-brand" href="/profile">
           <img class="bird" alt="Brand" src="bird.png">
         </a>
+        <ul class="nav navbar-nav navbar-right">
+          <i class="glyphicon glyphicon-user"></i>  <%= User.find(session[:id]).username %>
+        <ul>
       <% end%>
 
 
