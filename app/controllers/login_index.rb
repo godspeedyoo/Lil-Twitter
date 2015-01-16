@@ -40,6 +40,7 @@ end
 get '/profile' do
   #if a user is logged in
   if session[:id] != nil
+    @user = User.find(session[:id])
     # check the session to see if there is an id there
   #render something
     erb :'/profile/index'
