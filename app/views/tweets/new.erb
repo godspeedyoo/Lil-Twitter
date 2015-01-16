@@ -1,10 +1,15 @@
-<form action="/tweets" method="post">
-  <label>Tweet content:</label> <br>
+<div class="panel panel-default">
+  
+  <div class="panel-body">
+    <h3>Create a new Lil-Tweet!</h3><br>
+			<form action="/tweets" method="post">
 
-<% unless @tweet.errors[:content].blank? %>
-<div class="tweet-error"><%= @tweet.errors[:content][0] %></div>
-<% end %>
+				<% unless @tweet.errors[:content].blank? %>
+				<%= @tweet.errors[:content][0] %>
+				<% end %>
 
-  <input type="text" name="tweet[content]" value="<%= h @tweet.content %>" placeholder="Tweet">
-  <input type="submit" value="Tweet!!">
-</form>
+	  	<input type="text" name="tweet[content]" value="<%= @tweet.content %>" placeholder="Tweet Content">
+	  	<input class="btn btn-info"  type="submit" value="Tweet!!">
+		</form>
+  </div>
+</div> 
