@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
   validates :username, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
+
   validates :email, presence: true
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
 
   def password
      @password ||= Password.new(password_hash)
