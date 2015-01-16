@@ -24,7 +24,13 @@ post '/tweets' do
 end
 
 post '/tweets/:id/retweet' do
-  @tweet = Tweet.find(params[:id])
+  user = User.find(session[:id])
+  tweet = Tweet.find(params[:id])
+  user.tweets.create( user_id: user.id,
+                      content: tweet.content,
+                      created_at: tweet.created_at,
+                      updated_at: Time.now,
+                      original_user_id: tweet.user_id)
   # @tweet.update_attributes(:)
 end
 

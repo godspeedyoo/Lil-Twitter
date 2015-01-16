@@ -29,7 +29,11 @@
             <div class="tweet-header">
 
               <div class="col-md-6">
-              <em>@<%= tweet.user.username %></em>
+              <em>@<%= tweet.user.username %>,</em>
+            <% if tweet.original_user_id %>
+            Retweet from: @<%= User.find(tweet.original_user_id).username %>
+            <% end %>
+
               </div>
 
               <div class="col-md-3"></div>
