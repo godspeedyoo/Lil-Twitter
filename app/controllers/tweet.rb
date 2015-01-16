@@ -1,9 +1,9 @@
 # require 'json'
 
 get '/tweets' do
+  @current_user = User.find(session[:id])
   @tweets = Tweet.all
-  p "*"*50
-  p @tweets
+  @users = User.all
   erb :'tweets/index'
 end
 

@@ -14,15 +14,18 @@
 
   <!-- NAVIGATION HEADER WITH BIRD BRAND -->
     <nav class="navbar navbar-default container-fluid">
+
       <% if session[:id].blank? %>
         <a class="navbar-brand" href="/">
           <img class="bird" alt="Brand" src="bird.png">
         </a>
       <% else %>
+      <%= User.find(session[:id]).username %>
         <a class="navbar-brand" href="/profile">
           <img class="bird" alt="Brand" src="bird.png">
         </a>
       <% end%>
+
 
     </nav>
       <div class ="col-md-12 jumbotron">

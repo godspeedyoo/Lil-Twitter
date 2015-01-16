@@ -44,6 +44,7 @@
              <%= tweet.content %>
             </div>
 
+
             <div class="container">
               <form class="tweet-button" method="post" action="/tweets/<%= tweet.id %>/retweet">
                 <input class="btn btn-info btn-xs" type="submit" value="retweet">
@@ -63,11 +64,27 @@
     <div class="col-md-3">
 
       <div class="panel panel-default">
-        <div class="panel-body">
-          Who to Follow . refresh . view all
+
+        <div class="panel-header">
+          Currently Following
         </div>
 
-        <div class="panel-footer">Find people you know</div>
+        <% @current_user.followings.each do |following| %>
+            <div class="panel-footer">
+              <a href="/profile/<%= following.id %>"><%= following.username %></a>
+            </div>
+        <% end %>
+
+        <div class="panel-header">
+        Find people you may know
+        </div>
+        <div class="panel-footer">
+        <% @users.each do |user| %>
+          <div class="panel-users">
+            <a href="/profile/<%= user.id %>"><%= user.username  %></a>
+          </div>
+        <% end %>
+        </div>
       </div>
 
     </div>
