@@ -10,15 +10,11 @@ class User < ActiveRecord::Base
   has_many :subscriptions, :foreign_key => :follower_id
   has_many :followings, through: :subscriptions
 
-
-
-
   validates :username, presence: true
   validates :username, uniqueness: true
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-
 
   validates :email, presence: true
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
@@ -33,13 +29,4 @@ class User < ActiveRecord::Base
      @password ||= Password.create(pass)
      self.password_hash = @password
   end
-
-  # def self.create(params)
-  #   user = User.new(
-  #     :username => params[:username],
-  #     :email => params[:email] )
-  #   user.password= params[:password]
-  #   user.save
-  #   user
-  # end
 end
