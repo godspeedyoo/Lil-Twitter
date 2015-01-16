@@ -4620,10 +4620,7 @@ a.badge:focus {
   margin-left: 3px;
 }
 .jumbotron {
-  padding: 30px 15px;
-  margin-bottom: 30px;
-  color: inherit;
-  background-color: #eee;
+
 }
 .jumbotron h1,
 .jumbotron .h1 {
@@ -4634,9 +4631,7 @@ a.badge:focus {
   font-size: 21px;
   font-weight: 200;
 }
-.jumbotron > hr {
-  border-top-color: #d5d5d5;
-}
+
 .container .jumbotron,
 .container-fluid .jumbotron {
   border-radius: 6px;
@@ -6360,3 +6355,13 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+.jumbotron {
+  margin-top: -19px;
+  background-image: url(../cloud2.jpg);
+  min-height: 850px ;
+}
+
+.home-title {
+  color: white;
+
+}
