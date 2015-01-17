@@ -32,6 +32,7 @@ post '/tweets/:id/retweet' do
                       updated_at: Time.now,
                       original_user_id: tweet.user_id)
   # @tweet.update_attributes(:)
+  redirect '/tweets'
 end
 
 delete '/tweets/:id' do
